@@ -1,2 +1,20 @@
-# Climate-Weather-GenAI
-Weather Wonder AI is a Generative AI-powered web application that helps children learn about weather through simple explanations and colorful AI-generated illustrations. It combines real-time weather information with interactive educational content to make weather learning enjoyable and easy to understand.
+# Weather Wonder AI
+
+A Flask-based Generative AI prototype that creates age-appropriate weather pictures for children.
+
+## Project structure
+
+- `app.py` - Flask backend and image-generation request
+- `templates/index.html` - webpage UI
+- `static/style.css` - webpage styling
+- `static/script.js` - image generation and text-to-speech logic
+- `requirements.txt` - Python dependencies
+
+## Run locally
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+
+Open `http://127.0.0.1:5000/` in a browser.

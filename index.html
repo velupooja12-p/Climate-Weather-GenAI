@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Wonder AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="badge">☁️ GENERATIVE AI • WEATHER FOR KIDS</div>
+        <h1>Weather Wonder AI</h1>
+        <p>Create age-appropriate AI weather pictures for children.</p>
+    </header>
+
+    <main class="container">
+        <section class="card controls">
+            <h2>🎨 Create a Weather Picture</h2>
+
+            <label for="age">👶 Child Age</label>
+            <select id="age">
+                <option value="3-5">👶 3–5 years</option>
+                <option value="6-8">🧒 6–8 years</option>
+                <option value="9-12">👦 9–12 years</option>
+            </select>
+
+            <label for="weather">🌦️ Weather</label>
+            <select id="weather">
+                <option value="sunny">☀️ Sunny</option>
+                <option value="rainy">🌧️ Rainy</option>
+                <option value="cloudy">☁️ Cloudy</option>
+                <option value="stormy">⛈️ Stormy</option>
+                <option value="snowy">❄️ Snowy</option>
+                <option value="windy">🍃 Windy</option>
+                <option value="rainbow">🌈 Rainbow</option>
+            </select>
+
+            <label for="location">📍 Scene</label>
+            <input id="location" type="text" value="a happy park"
+                   placeholder="Example: school garden, beach, farm">
+
+            <label for="style">🎨 Picture Style</label>
+            <select id="style">
+                <option value="cartoon">🖍️ Cartoon</option>
+                <option value="3d">🧸 3D</option>
+                <option value="watercolor">🎨 Watercolor</option>
+                <option value="realistic">📷 Realistic</option>
+            </select>
+
+            <label for="extra">✨ Extra Details</label>
+            <textarea id="extra" rows="3" placeholder="Optional details"></textarea>
+
+            <button id="generateBtn" onclick="generateImage()">
+                ✨ Generate Weather Picture
+            </button>
+
+            <p id="status" class="status"></p>
+        </section>
+
+        <section class="card preview-card">
+            <div class="preview-head">
+                <h2>🖼️ Generated Picture</h2>
+                <a id="downloadBtn" class="download hidden"
+                   download="weather_picture.png">Download</a>
+            </div>
+
+            <div id="emptyState" class="empty">
+                <div>
+                    <div class="big-icon">🌦️</div>
+                    <h3>Your AI picture will appear here</h3>
+                    <p>Choose age, weather and style, then click Generate.</p>
+                </div>
+            </div>
+
+            <div id="result" class="result hidden">
+                <img id="generatedImage" alt="AI generated weather illustration">
+
+                <div class="learning-box">
+                    <h3>📚 Learn about this weather</h3>
+                    <p id="explanation"></p>
+
+                    <button id="listenBtn" class="listen-btn"
+                            onclick="speakExplanation()">🔊 Listen</button>
+
+                    <button id="stopBtn" class="stop-btn"
+                            onclick="stopAudio()">⏹️ Stop</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Weather Wonder AI • Flask + Generative AI • Age Adaptive Learning
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
